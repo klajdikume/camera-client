@@ -1,0 +1,31 @@
+<div class="d-flex  p-2 mt-5 bd-highlight justify-content-center">
+    <div class="row">
+
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nr</th>
+                <th scope="col">Name</th>
+                <th scope="col">Model</th>
+                <th scope="col">Resolution</th>
+                <th scope="col">Ip</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of cameras; let i = index">
+                  <td>{{i + 1}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.model}}</td>
+                  <td>{{item.resolution}}</td>
+                  <td>{{item.ip}}</td>
+                  <td>
+                    <button type="button" class="btn btn-primary" routerLink="/camera-details/{{item.id}}">
+                        <span class="glyphicon glyphicon-eye-open">View</span>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
