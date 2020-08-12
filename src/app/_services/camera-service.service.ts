@@ -26,10 +26,11 @@ export class CameraServiceService {
   }
 
   getCameraById(id: string) {
-    return this.http.get(this.baseUrl + 'cameras/camera?id=' + id);
+    return this.http.get<ICamera>(this.baseUrl + 'cameras/camera?id=' + id);
   }
 
   deleteCameraById(id: string) {
+    console.log(id);
     return this.http.delete(this.baseUrl + 'cameras/cameraForDelete?id=' + id);
   }
 

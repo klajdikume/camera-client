@@ -12,7 +12,8 @@ import { CameraAddComponent } from './camera-add/camera-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './_shared/text-input/text-input.component';
 import { ToastrModule } from 'ngx-toastr';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { CameraDetailResolver } from './_resolver/camera-detail.resolver';
 
 @NgModule({
   declarations: [
@@ -26,17 +27,20 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRouteModule,
     HttpClientModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(
       {
         closeButton: true,
-        positionClass: 'top-left'
+        positionClass: 'toast-bottom-right'
       }
     )
   ],
-  providers: [],
+  providers: [
+    CameraDetailResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

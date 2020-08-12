@@ -1,4 +1,4 @@
-<div class="d-flex  p-2 mt-5 bd-highlight justify-content-center">
+<div class="d-flex p-2 mt-5  justify-content-center">
     <div class="row">
 
         <table class="table">
@@ -13,6 +13,7 @@
               </tr>
             </thead>
             <tbody>
+              <tr *ngIf="cameras.length == 0">There is no data</tr>
               <tr *ngFor="let item of cameras; let i = index">
                   <td>{{i + 1}}</td>
                   <td>{{item.name}}</td>
@@ -20,9 +21,12 @@
                   <td>{{item.resolution}}</td>
                   <td>{{item.ip}}</td>
                   <td>
-                    <button type="button" class="btn btn-primary" routerLink="/camera-details/{{item.id}}">
-                        <span class="glyphicon glyphicon-eye-open">View</span>
+                    <button type="button" class="btn btn-primary" [routerLink]="['/camera-details', item.id]" title="View camera details">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
+                    <button class="btn btn-danger ml-3" (click)="deleteCamera(item.id)" title="Delete this camera">
+                      <i class="fa fa-trash"></i>
+                  </button>
                   </td>
               </tr>
             </tbody>

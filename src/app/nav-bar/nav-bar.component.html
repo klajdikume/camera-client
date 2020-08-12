@@ -1,23 +1,15 @@
-<div class="navbar navbar-expand-md navbar-dark bg-dark">
+<div class="navbar navbar-expand-md navbar-dark bg-dark ">
     <div class="container">
          
         <nav class="navbar-nav mr-auto" style="font-size: larger;">
-            <a class="p-2" routerLink="/cameras-list" routerLinkActive="active">My Cameras</a>
-            <a class="p-2" routerLink="/create-camera" routerLinkActive >Add new camera</a>
+    
+            <a class="p-2" routerLink="/cameras-list" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">My Cameras</a>
+            <a class="p-2" routerLink="/create-camera" routerLinkActive="is-active">Add new camera</a>
+            
+            
         </nav>
       
     </div>
 
 </div>
-
-
-<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" >Cameras Manager</a>
-  
-        
-  
-    </div>
-</nav>
-     -->
 

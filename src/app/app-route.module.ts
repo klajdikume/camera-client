@@ -5,12 +5,13 @@ import { CamerasListComponent } from './cameras-list/cameras-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CameraAddComponent } from './camera-add/camera-add.component';
 import { CameraDetailsComponent } from './camera-details/camera-details.component';
+import { CameraDetailResolver } from './_resolver/camera-detail.resolver';
 
 const routes: Routes = [
     { path: '', component: CamerasListComponent },
     { path: 'cameras-list', component: CamerasListComponent },
     { path: 'create-camera', component: CameraAddComponent },
-    { path: 'create-camera/:id', component: CameraDetailsComponent },
+    { path: 'camera-details/:id', component: CameraDetailsComponent, resolve: {camera: CameraDetailResolver} },
     { path: 'not-found', component: NotFoundComponent },
     { path: '**', redirectTo: 'not-found', pathMatch: 'full' }
 ];
