@@ -34,4 +34,8 @@ export class CameraServiceService {
     return this.http.delete(this.baseUrl + 'cameras/cameraForDelete?id=' + id);
   }
 
+  getNumberOfCamerasWithAResolution(resolution: string) {
+    return this.http.get<number>(this.baseUrl + 'cameras/resolutions?resolution=' + resolution);
+  }
+
 }
