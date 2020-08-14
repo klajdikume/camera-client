@@ -14,6 +14,9 @@ export class CameraDetailResolver implements Resolve<ICamera> {
                 private toastr: ToastrService) { }
 
     resolve(route: ActivatedRouteSnapshot): Observable<ICamera> {
+
+        console.log(route.params['id']);
+
         return this.cameraService.getCameraById(route.params['id']).pipe(
             catchError(error => {
                 this.toastr.error('Can not retrive data');

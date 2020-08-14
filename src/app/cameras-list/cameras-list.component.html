@@ -13,7 +13,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngIf="cameras.length == 0">There is no data</tr>
+              <tr *ngIf="cameras?.length === 0">There is no data</tr>
               <tr *ngFor="let item of cameras; let i = index">
                   <td>{{i + 1}}</td>
                   <td>{{item.name}}</td>
@@ -24,7 +24,7 @@
                     <button type="button" class="btn btn-primary" [routerLink]="['/camera-details', item.id]" title="View camera details">
                       <i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-danger ml-3" (click)="deleteCamera(item.id)" title="Delete this camera">
+                    <button class="btn btn-danger ml-3" (click)="deleteCamera(item.id, item.ip)" title="Delete this camera">
                       <i class="fa fa-trash"></i>
                   </button>
                   </td>

@@ -8,7 +8,7 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 })
 export class TextInputComponent implements OnInit, ControlValueAccessor {
 
-  // Native emenet and dom bridge
+  // Native element and dom bridge
   @ViewChild('input', { static: true }) input: ElementRef;
   @Input() type = 'text';
   @Input() label: string;
@@ -17,7 +17,6 @@ export class TextInputComponent implements OnInit, ControlValueAccessor {
     this.controlDir.valueAccessor = this; // access access to this componenet and html
   }
 
-  // NgControl when forms derive
 
   ngOnInit() {
     const control = this.controlDir.control;
