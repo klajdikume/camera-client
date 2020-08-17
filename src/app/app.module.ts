@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import { AppComponent } from './app.component';
 import { CameraDetailsComponent } from './camera-details/camera-details.component';
@@ -46,6 +47,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatDialogModule,
     MatIconModule,
     ChartsModule,
+    PaginationModule.forRoot(),
     BrowserAnimationsModule,
     AppRouteModule,
     HttpClientModule,
