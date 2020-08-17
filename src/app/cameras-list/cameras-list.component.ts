@@ -63,7 +63,8 @@ export class CamerasListComponent implements OnInit {
       if (res) {
         this.cameraService.deleteCameraById(id).subscribe(() => {
           this.toastr.success('Camera deleted succesfully!');
-          this.getCameras();
+          // this.getCameras();
+          this.getCamerasPaginated();
         },
         error => {
           console.log(error);
